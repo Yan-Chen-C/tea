@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--mybatis主配置文件-->
+<configuration>
+
+
+    <!--数据源连接环境配置-->
+    <environments default="env1">
+        <environment id="env1">
+            <!--事务管理器-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--数据源:使用内置连接池-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/ideaui?serverTimezone=Asia/Shanghai&amp;useSSL=false&amp;characterEncoding=utf8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--定义映射器的配置-->
+    <mappers>
+        <mapper class="com.newer.mapper.TeaOrderMapper"/>
+
+    </mappers>
+	
+</configuration>
